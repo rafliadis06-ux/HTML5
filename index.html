@@ -45,6 +45,24 @@
             </div>
         </section>
         
+        <!-- SECTION: Tentang Saya (editable) - ditempatkan di bawah biodata -->
+        <section id="tentang-saya" aria-labelledby="tentangSayaHeading">
+            <h2 id="tentangSayaHeading">Tentang Saya</h2>
+            <!-- Penjelasan: Wadah ini memungkinkan Anda menulis deskripsi singkat tentang diri Anda. -->
+            <div class="about-card">
+                <div id="aboutContent" class="about-content" contenteditable="false" aria-label="Area tentang saya" aria-multiline="true">
+                    <!-- Contoh: Saya mahasiswa Sistem Informasi yang tertarik pada pengembangan web... -->
+                    <p>Isi sedikit tentang dirimu di sini. Klik 'Edit' untuk mengubah.</p>
+                </div>
+                <div class="about-actions">
+                    <button id="editAbout" type="button">Edit</button>
+                    <button id="saveAbout" type="button" disabled>Simpan</button>
+                    <button id="resetAbout" type="button">Reset</button>
+                </div>
+                <p class="help-text">Penjelasan singkat: Gunakan tombol <strong>Edit</strong> untuk mengubah teks, <strong>Simpan</strong> untuk menyimpan ke browser Anda, dan <strong>Reset</strong> untuk mengembalikan ke teks default.</p>
+            </div>
+        </section>
+        
         <!-- SECTION 2: Tentang Perkuliahan -->
         <section id="tentang">
             <h2>Tentang Perkuliahan</h2>
@@ -216,7 +234,7 @@
     
     <!-- FOOTER: Bagian bawah website -->
     <footer>
-        <p>&copy; 2024 Portal Perkuliahan. All Rights Reserved.</p>
+        <p>&copy; 2025 Portal Perkuliahan. All Rights Reserved.</p>
         <p>Dibuat dengan HTML & CSS</p>
     </footer>
     <button id="backToTop" aria-label="Kembali ke atas">↑</button>

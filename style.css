@@ -235,6 +235,70 @@ table tbody tr:hover {
 }
 
 /* ========================================
+   WADAH: TENTANG SAYA (editable)
+   Penjelasan: area ini memungkinkan pengguna menulis deskripsi singkat tentang diri mereka.
+   ---------------------------------------- */
+.about-card {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border-left: 4px solid #1abc9c;
+}
+
+.about-content {
+    min-height: 120px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    white-space: pre-wrap; /* jaga pemformatan baris */
+    overflow: auto;
+    color: #333;
+}
+
+/* Saat dapat diedit tampilkan outline agar jelas */
+.about-content[contenteditable="true"] {
+    outline: 2px dashed #667eea;
+    background: #fffefc;
+}
+
+.about-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.about-actions button {
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    background: #667eea;
+    color: #fff;
+    cursor: pointer;
+}
+
+.about-actions button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.about-actions #resetAbout {
+    background: #e74c3c;
+}
+
+.about-actions #saveAbout {
+    background: #1abc9c;
+}
+
+.help-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+
+/* ========================================
    LISTS
    ======================================== */
 

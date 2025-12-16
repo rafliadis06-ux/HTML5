@@ -77,4 +77,69 @@ document.addEventListener('DOMContentLoaded', () => {
   backToTop.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') e.preventDefault();
   });
+
+  /* ========================================
+     TENTANG SAYA (editable) - fitur penyimpanan lokal
+     Penjelasan: area ini bisa diedit, disimpan ke localStorage, dan di-reset.
+     ======================================== */
+  const aboutContent = document.getElementById('aboutContent');
+  const editBtn = document.getElementById('editAbout');
+  const saveBtn = document.getElementById('saveAbout');
+  const resetBtn = document.getElementById('resetAbout');
+  const ABOUT_KEY = 'aboutMe_v1';
+
+  if (aboutContent && editBtn && saveBtn && resetBtn) {
+    const defaultHTML = aboutContent.innerHTML;
+
+    // Muat konten tersimpan (jika ada)
+    const loadAbout = () => {
+      const saved = localStorage.getItem(ABOUT_KEY);
+      if (saved) aboutContent.innerHTML = saved;
+    };
+
+    // Set mode edit / non-edit
+    const setEditing = (isEditing) => {
+      aboutContent.setAttribute('contenteditable', isEditing ? 'true' : 'false');
+      if (isEditing) {
+        aboutContent.focus();
+        saveBtn.disabled = false;
+        editBtn.textContent = 'Batal';
+      } else {
+        saveBtn.disabled = true;
+        editBtn.textContent = 'Edit';
+      }
+    };
+
+    // Aktifkan save saat ada perubahan
+    aboutContent.addEventListener('input', () => {
+      saveBtn.disabled = false;
+    });
+
+    editBtn.addEventListener('click', () => {
+      if (aboutContent.getAttribute('contenteditable') === 'true') {
+        // Batal edit -> kembalikan ke nilai tersimpan
+        aboutContent.innerHTML = localStorage.getItem(ABOUT_KEY) || defaultHTML;
+        setEditing(false);
+      } else {
+        setEditing(true);
+      }
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const html = aboutContent.innerHTML.trim();
+      localStorage.setItem(ABOUT_KEY, html);
+      setEditing(false);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      const confirmReset = confirm('Reset teks tentang saya ke nilai awal?');
+      if (!confirmReset) return;
+      localStorage.removeItem(ABOUT_KEY);
+      aboutContent.innerHTML = defaultHTML;
+      setEditing(false);
+    });
+
+    // Muat saat startup
+    loadAbout();
+  }
 });
