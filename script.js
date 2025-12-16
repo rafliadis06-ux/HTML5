@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = Array.from(document.querySelectorAll('main section'));
   const backToTop = document.getElementById('backToTop');
 
-  // Smooth scroll for nav links
+  //Smooth scroll for nav links
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
