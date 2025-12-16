@@ -1,0 +1,323 @@
+/* ========================================
+   RESET & GLOBAL STYLES
+   ======================================== */
+
+/* Reset margin dan padding untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pengaturan dasar untuk body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+
+/* Styling untuk header utama */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #0930b3 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Judul di header */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   NAVIGATION MENU
+   ======================================== */
+
+/* Container navigasi */
+nav {
+    background: #2c3e50;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Daftar menu navigasi */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Item menu */
+nav li {
+    margin: 0;
+}
+
+/* Link navigasi */
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background 0.3s;
+}
+
+/* Efek hover pada menu */
+nav a:hover {
+    background: #34495e;
+}
+
+/* Active nav link */
+nav a.active {
+    background: #1abc9c;
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+
+/* Container konten utama */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Setiap section/bagian */
+section {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Heading level 2 (judul section) */
+h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+}
+
+/* ========================================
+   BIODATA SECTION
+   ======================================== */
+
+/* Container biodata dengan layout flex */
+.biodata {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+/* Foto profil */
+.biodata img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #667eea;
+}
+
+/* Informasi biodata */
+.biodata-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Paragraf dalam biodata */
+.biodata-info p {
+    margin-bottom: 0.5rem;
+}
+
+/* Label/judul dalam biodata (contoh: "Nama:", "NIM:") */
+.biodata-info strong {
+    color: #667eea;
+    display: inline-block;
+    width: 120px;
+}
+
+/* ========================================
+   TABLE (JADWAL KULIAH)
+   ======================================== */
+
+/* Tabel jadwal */
+table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Header tabel */
+table thead {
+    background: #667eea;
+    color: white;
+}
+
+/* Sel tabel (header dan data) */
+table th, table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Baris genap dalam tabel (warna berbeda) */
+table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Efek hover pada baris tabel */
+table tbody tr:hover {
+    background: #e9ecef;
+}
+
+/* ========================================
+   INFO CARDS
+   ======================================== */
+
+/* Card untuk informasi tambahan */
+.info-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border-left: 4px solid #667eea;
+}
+
+/* Judul dalam info card */
+.info-card h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
+/* Daftar dengan bullet */
+ul.daftar {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* Item dalam daftar */
+ul.daftar li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
+
+/* Footer di bawah halaman */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (UNTUK HP/TABLET)
+   ======================================== */
+
+/* Ketika layar lebih kecil dari 768px (HP/Tablet) */
+@media (max-width: 768px) {
+    /* Ukuran judul lebih kecil */
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Menu navigasi jadi vertikal */
+    nav ul {
+        flex-direction: column;
+    }
+    
+    /* Link navigasi di tengah */
+    nav a {
+        text-align: center;
+    }
+    
+    /* Biodata jadi vertikal dan di tengah */
+    .biodata {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* Ukuran font tabel lebih kecil */
+    table {
+        font-size: 0.9rem;
+    }
+    
+    /* Padding tabel lebih kecil */
+    table th, table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Back to top button */
+#backToTop {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #667eea;
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop.show {
+    display: flex;
+}
+
+/* Collapsible info-card content */
+.info-card h3 {
+    cursor: pointer;
+}
+.info-card p.hidden {
+    display: none;
+}
+
+/* Explanatory note below section headings */
+.explain {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: #eef6ff;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+/* Small note in header */
+header .note {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+header .note a { color: #fff; text-decoration: underline; }
