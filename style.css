@@ -94,7 +94,7 @@ main {
 
 /* Setiap section/bagian */
 section {
-    background: white;
+    background: rgb(255, 255, 255);
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
@@ -153,13 +153,43 @@ h2 {
    ======================================== */
 
 /* Tabel jadwal */
-table {
-    text-align: center;
+#jadwal table {
+    /* Center table and constrain width to 700px (ubah ke 100% jika ingin penuh lebar) */
+    margin: 2rem auto 0;
     width: 100%;
+    max-width: 700px; /* ubah ke 100% untuk lebar penuh */
     border-collapse: collapse;
-    margin-top: 1rem;
+    table-layout: fixed; /* kolom dengan lebar tetap untuk distribusi yang konsisten */
     overflow-x: auto;
-    display: block;
+    display: table;
+    text-align: left; /* teks rata kiri untuk keterbacaan */
+}
+
+/* Kolom: 5 kolom total -> kolom Mata Kuliah (ke-3) 30%, sisanya dibagi rata */
+#jadwal table th:nth-child(1),
+#jadwal table td:nth-child(1),
+#jadwal table th:nth-child(2),
+#jadwal table td:nth-child(2),
+#jadwal table th:nth-child(4),
+#jadwal table td:nth-child(4),
+#jadwal table th:nth-child(5),
+#jadwal table td:nth-child(5) {
+    width: 17.5%;
+}
+
+#jadwal table th:nth-child(3),
+#jadwal table td:nth-child(3) {
+    width: 30%;
+}
+
+/* Small-screen fallback: allow table to scroll horizontally and use auto layout */
+@media (max-width: 768px) {
+    #jadwal table {
+        width: 100%;
+        display: block;
+        table-layout: auto;
+        text-align: center; /* pusat teks di layar kecil untuk menghemat ruang */
+    }
 }
 
 /* Header tabel */
